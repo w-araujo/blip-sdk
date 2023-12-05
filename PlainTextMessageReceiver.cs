@@ -25,7 +25,15 @@ namespace Blip_sdk
         public async Task ReceiveAsync(Message message, CancellationToken cancellationToken)
         {
             Trace.TraceInformation($"From: {message.From} \tContent: {message.Content}");
-            await _sender.SendMessageAsync("Pong!", message.From, cancellationToken);
+
+            // Pega a mensagem enviada para o bot
+            Console.WriteLine(message.Content.ToString());
+
+            await _sender.SendMessageAsync("Bem vindo! Ao comprador de ingressos online.", message.From, cancellationToken);
+
+            // Tempo para mostrar a proxima mensagem
+            Thread.Sleep(1000);
+            await _sender.SendMessageAsync("Como posso ajudar?", message.From, cancellationToken);
         }
     }
 }

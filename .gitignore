@@ -8,6 +8,7 @@
 
 #json
 *application.json
+*MidiaLinkMessageReceiver.cs
 
 # User-specific files
 *.rsuser
